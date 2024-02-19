@@ -18,7 +18,7 @@ function Sidebar() {
       <Navbar bg="primary" data-bs-theme="dark">
         <Container>
           <Navbar.Brand>
-            SAV
+            Assistance SAV
           </Navbar.Brand>
         </Container>
       </Navbar>

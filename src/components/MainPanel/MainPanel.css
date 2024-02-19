@@ -1,0 +1,19 @@
+.upper-buttons {
+    width: 100%;
+    height: 30vh;
+}
+  
+.main-buttons-icons {
+    width: 20%;
+    margin: 10%;
+}
+
+.bottom-buttons {
+    width: 25%;
+    height: 30vh;
+}
+
+.main-panel {
+    display: flex;;
+    justify-content: center;
+}

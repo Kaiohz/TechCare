@@ -2,8 +2,9 @@ import './App.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar';
+import MainPanel from './components/MainPanel/MainPanel';
 
 /**
  * 
@@ -16,14 +17,12 @@ function App() {
       <Row>
         <Header />
       </Row>
-      <Row className="logo-container">
-        <img src={require("./resources/img/c2ap.JPG")} className="logo"/>
-      </Row>
       <Row>
         <Col lg={2} className="sidebar-col">
          <Sidebar />  
         </Col>
-        <Col lg={10}> 
+        <Col className="panel-background" lg={10}>
+          <MainPanel />
         </Col>
       </Row>
     </Container>
