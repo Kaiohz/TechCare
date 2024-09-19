@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SidePanelItem } from './bo/side-panel-item';
+import { HeaderPanelItem } from './bo/header-panel-item';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
@@ -14,8 +14,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 export class AppComponent {
   title = 'TechChare';
   purpose = 'Maitenance mécanique'
-  logoPath = 'assets/img/c2ap.JPG'
-  sidePanelItems: SidePanelItem[] = [
+  logoPath = 'assets/img/c2ap-white-clean.png'
+  headerPanelItems: HeaderPanelItem[] = [
     {path: 'library', name: 'Bibliothèque'},
     {path: 'sav', name: 'Assistance SAV'},
     {path: 'clients', name: 'Clients'},

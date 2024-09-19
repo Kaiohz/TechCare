@@ -7,10 +7,14 @@
 }
 
 .sidenav {
-    background-color: #F4A261;
+    background-color: #ffffff;
     width: 20vh;
+    border-bottom-left-radius: 10px;
+    border:1px solid gray;
 }
 
 .content {
-    background-color: #264653;
+    background-color: #f6fafd;
+    border-top:1px solid gray;
+    border-bottom-right-radius: 10px;
 }

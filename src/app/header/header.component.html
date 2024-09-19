@@ -1,10 +1,12 @@
 <mat-toolbar color="primary" class="tech-care-header">
-    <span>{{ title }}</span>
+    <img src="{{ logoPath }}" width="170" height="60" />
     <span class="spacer"></span>
-    <span>
-        <img src="{{ logoPath }}" width="150" height="50" />
-    </span>
+    <mat-list-item *ngFor="let item of headerPanelItems">
+        <span>
+            <button mat-button [routerLink]="['/page1']">{{ item.name }}</button>
+        </span>
+        <!-- <a routerLink="{{ item.path }}" routerLinkActive="active" ariaCurrentWhenActive="page">{{ item.name }}</a> -->
+    </mat-list-item>
     <span class="spacer"></span>
-    <span>{{ purpose }}</span>
 </mat-toolbar>
   

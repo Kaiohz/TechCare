@@ -1,11 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="opened">
-        <mat-list>
-            <mat-list-item *ngFor="let item of sidePanelItems"><a routerLink="{{ item.path }}" routerLinkActive="active" ariaCurrentWhenActive="page">{{ item.name }}</a></mat-list-item>
-        </mat-list>           
+    <mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="opened">        
     </mat-sidenav>
     <mat-sidenav-content class="content">
-      <p><button mat-button (click)="sidenav.toggle()">> Menu</button></p>
       <router-outlet />
     </mat-sidenav-content>
 </mat-sidenav-container>

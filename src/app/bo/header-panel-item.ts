@@ -1,4 +1,4 @@
-export interface SidePanelItem{
+export interface HeaderPanelItem{
     path: string;
     name: string;
 }
