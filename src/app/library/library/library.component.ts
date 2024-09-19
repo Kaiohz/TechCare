@@ -10,6 +10,4 @@ import {MatGridListModule} from '@angular/material/grid-list';
   styleUrl: './library.component.css'
 })
 export class LibraryComponent {
-
-
 }

@@ -1,11 +1,9 @@
 import { Component, Input } from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HeaderPanelItem } from '../bo/header-panel-item';
 import {MatListModule} from '@angular/material/list';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import {TechCareButtonsComponent} from '../tech-care-buttons/tech-care-buttons.component'
 
 
 
@@ -13,7 +11,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatButtonModule, MatToolbarModule, MatListModule, RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [CommonModule, MatToolbarModule, MatListModule, TechCareButtonsComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

@@ -13,8 +13,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 })
 export class AppComponent {
   title = 'TechChare';
-  purpose = 'Maitenance mécanique'
-  logoPath = 'assets/img/c2ap-white-clean.png'
+  logoPath = 'assets/img/logo.png'
   headerPanelItems: HeaderPanelItem[] = [
     {path: 'library', name: 'Bibliothèque'},
     {path: 'sav', name: 'Assistance SAV'},
