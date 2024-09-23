@@ -1,11 +1,12 @@
-<mat-toolbar color="primary" class="tech-care-header">
-    <img src="{{ logoPath }}" width="170" height="60" />
-    <span class="spacer"></span>
-    <mat-list-item *ngFor="let item of headerPanelItems">
+<mat-toolbar color=primary class='tech-care-header'>
+    <img class='logo' src='{{ logoPath }}' width=170 height=60 />
+    <mat-list-item *ngFor='let item of headerPanelItems'>
         <span>
-            <app-tech-care-buttons name="{{ item.name }}" path="{{ item.path }}"></app-tech-care-buttons>
+            <app-tech-care-buttons [name]=item.name [path]=item.path></app-tech-care-buttons>
         </span>
     </mat-list-item>
-    <span class="spacer"></span>
+    <span class='spacer'></span>
+    <mat-icon aria-hidden=false aria-label=Example home icon fontIcon=account_circle></mat-icon>
+    <p>Benoit Dalesme</p>
 </mat-toolbar>
   

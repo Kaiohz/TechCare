@@ -1,7 +1,12 @@
-<mat-sidenav-container class="sidenav-container">
-    <mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="opened">        
+<mat-sidenav-container class=sidenav-container>
+    <mat-sidenav class=sidenav #sidenav mode=side [(opened)]=opened>
+      <mat-list-item *ngFor='let item of itemList'>
+        <span>
+          <app-tech-care-buttons [type]="'basic'" [icon]=item.icon [name]=item.name [path]=item.path [buttonClass]="'sidebar'"></app-tech-care-buttons>
+        </span>
+      </mat-list-item>
     </mat-sidenav>
-    <mat-sidenav-content class="content">
-      <router-outlet />
+    <mat-sidenav-content class='content'>
+          <router-outlet />
     </mat-sidenav-content>
 </mat-sidenav-container>

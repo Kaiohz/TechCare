@@ -1,20 +1,16 @@
 .sidenav-container {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     height: 92vh;
 }
 
 .sidenav {
     background-color: #ffffff;
-    width: 20vh;
-    border-bottom-left-radius: 10px;
-    border:1px solid gray;
+    width: 30vh;
+    border-left:1px solid gray;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
 }
 
 .content {
     background-color: #f6fafd;
     border-top:1px solid gray;
-    border-bottom-right-radius: 10px;
 }

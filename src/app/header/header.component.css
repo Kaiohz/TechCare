@@ -5,7 +5,16 @@
 .tech-care-header {
     background-color: #6740bf;
     height: 8vh;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
-  
+
+p {
+    font-size: 14px;
+}
+
+.logo {
+    margin-right: 6vh;
+}
+
+.mat-icon {
+    margin-right: 1vh;
+}

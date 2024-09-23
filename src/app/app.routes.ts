@@ -1,6 +1,11 @@
 import { Routes } from '@angular/router';
-import { LibraryComponent } from './library/library/library.component';
+import { SupplierComponent } from './supplier/supplier.component';
 
 export const routes: Routes = [
-    {path: 'library', component: LibraryComponent},
+    {
+        path: 'library',
+        children: [
+            { path: 'supplier', component: SupplierComponent }
+        ] }
+    
 ];

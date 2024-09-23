@@ -1,0 +1,16 @@
+/* sidebar button */
+.sidebar {
+    color: black !important;
+    margin-top: 1vh;
+}
+
+.sidebar:hover {
+    background-color: darkgray;
+}
+
+/* supplier button */
+
+.supplier {
+    color: black !important;
+    margin-top: 5vh;
+}
