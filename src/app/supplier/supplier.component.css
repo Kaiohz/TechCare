@@ -1,0 +1,30 @@
+.tech-care-field {
+    color: #7b1fa2 !important;}
+
+::ng-deep .mdc-notched-outline__leading {
+    border-color: #7b1fa2 !important;
+}
+
+::ng-deep .mdc-notched-outline__notch {
+    border-color: #7b1fa2 !important;
+}
+
+::ng-deep .mdc-notched-outline__trailing {
+    border-color: #7b1fa2 !important;
+}
+
+::ng-deep .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: #7b1fa2 !important ;
+}
+
+.supplier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-care-field {
+    width: 70vh;
+    margin-top: 5vh;
+}
