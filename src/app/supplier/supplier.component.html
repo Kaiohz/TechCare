@@ -1,27 +1,27 @@
-<div class=supplier>
+<form class='supplier' [formGroup]='supplierForm'>
     <mat-form-field class=tech-care-field>
         <mat-label>Raison sociale</mat-label>
-        <input matInput placeholder=Raison sociale>
+        <input matInput placeholder='Raison sociale' formControlName="companyName">
         <mat-icon matSuffix>store</mat-icon>
         <mat-hint>Inscrire la raison sociale du fournisseur</mat-hint>
     </mat-form-field>
     <mat-form-field class=tech-care-field>
         <mat-label>SIRET</mat-label>
-        <input matInput placeholder=SIRET>
+        <input matInput placeholder='SIRET' formControlName="siret">
         <mat-icon matSuffix>pin</mat-icon>
         <mat-hint>Inscrire le SIRET du fournisseur</mat-hint>
     </mat-form-field>
     <mat-form-field class=tech-care-field>
         <mat-label>Adresse</mat-label>
-        <input matInput placeholder=Adresse>
+        <input matInput placeholder='Adresse' formControlName="adresse">
         <mat-icon matSuffix>home</mat-icon>
         <mat-hint>Inscrire ladresse du fournisseur</mat-hint>
     </mat-form-field>
     <mat-form-field class=tech-care-field>
         <mat-label>Contact</mat-label>
-        <input matInput placeholder=Contact>
+        <input matInput placeholder='Contact' formControlName="contact">
         <mat-icon matSuffix>contact_mail</mat-icon>
         <mat-hint>Inscrire le contact du fournisseur (telephone, mail ...)</mat-hint>
     </mat-form-field>
     <app-tech-care-buttons [type]="'fab'" [icon]="'save'" [name]="'Ajouter fournisseur'" [buttonClass]="'supplier'"></app-tech-care-buttons>
-</div>
+</form>

@@ -4,11 +4,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { TechCareButtonsComponent } from '../tech-care-buttons/tech-care-buttons.component';
+import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+
 
 @Component({
   selector: 'app-supplier',
   standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, MatIconModule, TechCareButtonsComponent],
+  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, MatIconModule, TechCareButtonsComponent, ReactiveFormsModule],
   templateUrl: './supplier.component.html',
   styleUrl: './supplier.component.css',
   providers: [
@@ -17,5 +19,10 @@ import { TechCareButtonsComponent } from '../tech-care-buttons/tech-care-buttons
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SupplierComponent {
-
+  supplierForm = new FormGroup({
+    companyName: new FormControl(''),
+    siret: new FormControl(''),
+    adress: new FormControl(''),
+    contact: new FormControl(''),
+  });
 }
