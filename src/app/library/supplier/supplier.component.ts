@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field'; 
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { TechCareButtonsComponent } from '../tech-care-buttons/tech-care-buttons.component';
-import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {Validators} from '@angular/forms';
+import { TechCareButtonsComponent } from '../../tech-care-buttons/tech-care-buttons.component';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import ApiService from '../services/api/api.service'
-import { Supplier } from '../dto/supplier';
+import ApiService from '../services/api.service'
+import { Supplier } from '../../dto/supplier';
 import {
   MatSnackBar,
 } from '@angular/material/snack-bar';
@@ -17,7 +17,7 @@ import {
 @Component({
   selector: 'app-supplier',
   standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, MatIconModule, TechCareButtonsComponent, ReactiveFormsModule,CommonModule],
+  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, MatIconModule, TechCareButtonsComponent, ReactiveFormsModule, CommonModule],
   templateUrl: './supplier.component.html',
   styleUrl: './supplier.component.css',
   providers: [
@@ -27,11 +27,11 @@ import {
 })
 export class SupplierComponent {
   private _snackBar = inject(MatSnackBar);
-  
+
   apiService = new ApiService();
 
   supplierForm = new FormGroup({
-    companyName: new FormControl('',Validators.required),
+    companyName: new FormControl('', Validators.required),
     siret: new FormControl('', [Validators.required, Validators.pattern(/^\d{14}$/)]),
     adress: new FormControl('', Validators.required),
     contact: new FormControl('', Validators.required),
@@ -58,10 +58,10 @@ export class SupplierComponent {
     supplier.company_name = String(this.companyName?.value)
     supplier.siret = String(this.siret?.value)
     supplier.adress = String(this.adress?.value)
-    supplier.contact  =String(this.contact?.value)
+    supplier.contact = String(this.contact?.value)
     try {
       await this.apiService.addSupplier(supplier)
-      this._snackBar.open('✔ Fournisseur '+supplier.company_name+' ajouté avec succès', '', {
+      this._snackBar.open('✅ Fournisseur ' + supplier.company_name + ' ajouté avec succès', '', {
         horizontalPosition: 'right',
         verticalPosition: 'bottom',
         panelClass: ['success-snack'],
@@ -69,7 +69,7 @@ export class SupplierComponent {
       });
       this.supplierForm.reset()
     } catch (error) {
-      this._snackBar.open('X Erreur lors de l\'ajout du fournisseur '+supplier.company_name, '', {
+      this._snackBar.open('❌ Erreur lors de l\'ajout du fournisseur ' + supplier.company_name, '', {
         horizontalPosition: 'right',
         verticalPosition: 'bottom',
         panelClass: ['error-snack'],

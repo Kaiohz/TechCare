@@ -42,3 +42,37 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-datepicker-content {
     background-color: #6740bf !important;
 }
+
+div.mat-mdc-select-panel {
+    background-color: #6740bf !important;
+    color: white !important;
+}
+
+.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+    color: white !important;
+}
+
+.mat-primary {
+    --mat-minimal-pseudo-checkbox-selected-checkmark-color: white !important
+}
+
+.mat-mdc-select-value {
+    color: white !important;
+}
+
+thead {
+    background-color: #6740bf !important;
+}
+
+mat-paginator {
+    background-color: #6740bf !important;
+}
+
+.mat-mdc-row {
+    background-color: white !important;
+    color: black !important;
+}
+
+.mat-mdc-select-value {
+    color: #6740bf !important
+}

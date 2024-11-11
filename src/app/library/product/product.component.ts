@@ -11,11 +11,11 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import {
   MatSnackBar,
 } from '@angular/material/snack-bar';
-import { Product } from '../dto/product';
-import ApiService from '../library/services/api.service';
-import { TechCareButtonsComponent } from '../tech-care-buttons/tech-care-buttons.component';
-import { FamilyProduct } from '../dto/familyproduct';
-import { Supplier } from '../dto/supplier';
+import { Product } from '../../dto/product';
+import ApiService from '../services/api.service';
+import { TechCareButtonsComponent } from '../../tech-care-buttons/tech-care-buttons.component';
+import { FamilyProduct } from '../../dto/familyproduct';
+import { Supplier } from '../../dto/supplier';
 
 
 @Component({

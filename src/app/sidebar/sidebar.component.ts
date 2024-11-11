@@ -26,7 +26,7 @@ export class SidebarComponent {
       { name: 'Creer fournisseur', path: '/library/supplier', icon: 'add' },
       { name: 'Creer famille produit', path: '/library/familyproduct', icon: 'add' },
       { name: 'Creer produit', path: '/library/product', icon: 'add' },
-      { name: 'Lister produits', path: '/library/listproducts', icon: 'list' }
+      { name: 'Lister produits', path: '/library/listproducts', icon: 'list' },
     ]]
   ]);
 

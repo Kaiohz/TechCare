@@ -1,23 +1,23 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field'; 
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { TechCareButtonsComponent } from '../tech-care-buttons/tech-care-buttons.component';
-import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import {Validators} from '@angular/forms';
+import { TechCareButtonsComponent } from '../../tech-care-buttons/tech-care-buttons.component';
+import { FormArray, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import ApiService from '../services/api/api.service'
+import ApiService from '../services/api.service'
 import {
   MatSnackBar,
 } from '@angular/material/snack-bar';
-import { FamilyProduct } from '../dto/familyproduct';
+import { FamilyProduct } from '../../dto/familyproduct';
 
 
 @Component({
   selector: 'app-familyproduct',
   standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, MatIconModule, TechCareButtonsComponent, ReactiveFormsModule,CommonModule],
+  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, MatIconModule, TechCareButtonsComponent, ReactiveFormsModule, CommonModule],
   templateUrl: './familyproduct.component.html',
   styleUrl: './familyproduct.component.css',
   providers: [
@@ -28,11 +28,11 @@ import { FamilyProduct } from '../dto/familyproduct';
 
 export class FamilyProductComponent {
   private _snackBar = inject(MatSnackBar);
-  
+
   apiService = new ApiService();
 
   familyProductForm = new FormGroup({
-    familyName: new FormControl('',Validators.required),
+    familyName: new FormControl('', Validators.required),
     specifications: new FormArray([])
   });
 
@@ -59,7 +59,7 @@ export class FamilyProductComponent {
     familyProduct.specifications = String(this.specificationsFormArray?.value)
     try {
       await this.apiService.addFamilyProduct(familyProduct)
-      this._snackBar.open('✔ Famille de produit '+familyProduct.family_name+' ajoutée avec succès', '', {
+      this._snackBar.open('✅ Famille de produit ' + familyProduct.family_name + ' ajoutée avec succès', '', {
         horizontalPosition: 'right',
         verticalPosition: 'bottom',
         panelClass: ['success-snack'],
@@ -68,7 +68,7 @@ export class FamilyProductComponent {
       this.familyProductForm.reset()
       this.specificationsFormArray.clear();
     } catch (error) {
-      this._snackBar.open('X Erreur lors de l\'ajout de la famille de produit '+familyProduct.family_name, '', {
+      this._snackBar.open('❌ Erreur lors de l\'ajout de la famille de produit ' + familyProduct.family_name, '', {
         horizontalPosition: 'right',
         verticalPosition: 'bottom',
         panelClass: ['error-snack'],

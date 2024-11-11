@@ -18,6 +18,11 @@
     color: white;
 }
 
+.file-button {
+    background-color: #6740bf !important;
+    color: white;
+}
+
 /* remove field */
 .remove-field {
     background-color: rgba(255, 0, 0, 0.527);
