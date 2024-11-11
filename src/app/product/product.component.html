@@ -1,0 +1,86 @@
+<form class='product' [formGroup]='productForm' (ngSubmit)="onSubmit()">
+    <mat-form-field class=tech-care-field>
+        <mat-label>Nom du produit</mat-label>
+        <input matInput placeholder='Nom du produit' formControlName="name">
+        <mat-icon matSuffix>category</mat-icon>
+        <mat-hint *ngIf="name?.hasError('required')" class="alert"> Inscrire le nom du produit</mat-hint>
+    </mat-form-field>
+    <mat-form-field class=tech-care-field>
+        <mat-label>Code douane</mat-label>
+        <input matInput placeholder='Code douane' formControlName="customs_code">
+        <mat-icon matSuffix>settings</mat-icon>
+        <mat-hint *ngIf="customsCode?.hasError('required')" class="alert"> Inscrire le code douane</mat-hint>
+    </mat-form-field>
+    <mat-checkbox class="tech-care-field" formControlName="is_kit">Le produit est-il un kit ?</mat-checkbox>
+    <mat-form-field class=tech-care-field>
+        <mat-label>Référence produit</mat-label>
+        <input matInput placeholder='Référence produit' formControlName="ref">
+        <mat-icon matSuffix>settings</mat-icon>
+        <mat-hint *ngIf="ref?.hasError('required')" class="alert"> Inscrire la référence du produit</mat-hint>
+    </mat-form-field>
+    <mat-form-field class=tech-care-field>
+        <mat-label>Numéro de série</mat-label>
+        <input matInput placeholder='Numéro de série' formControlName="serial_number">
+        <mat-icon matSuffix>settings</mat-icon>
+        <mat-hint *ngIf="serialNumber?.hasError('required')" class="alert"> Inscrire le numéro de série</mat-hint>
+    </mat-form-field>
+    <p *ngIf="img?.hasError('required')" class=tech-care-field-text>Séléctionner une image pour le produit</p>
+    <input class=tech-care-field type="file" formControlName="img">
+    <mat-form-field class=tech-care-field>
+        <mat-label>Description</mat-label>
+        <input matInput placeholder='Description' formControlName="description">
+        <mat-icon matSuffix>settings</mat-icon>
+        <mat-hint *ngIf="description?.hasError('required')" class="alert"> Inscrire la description du produit</mat-hint>
+    </mat-form-field>
+    <mat-form-field class=tech-care-field>
+        <mat-label>Prix public</mat-label>
+        <input matInput placeholder='Prix public' formControlName="public_price">
+        <mat-icon matSuffix>settings</mat-icon>
+        <mat-hint *ngIf="publicPrice?.hasError('required')" class="alert"> Inscrire le prix public</mat-hint>
+    </mat-form-field>
+    <mat-form-field class=tech-care-field>
+        <mat-label>Prix d'achat</mat-label>
+        <input matInput placeholder="Prix d'achat" formControlName="buying_price">
+        <mat-icon matSuffix>settings</mat-icon>
+        <mat-hint *ngIf="buyingPrice?.hasError('required')" class="alert"> Inscrire le prix d'achat</mat-hint>
+    </mat-form-field>
+    <mat-form-field class=tech-care-field>
+        <mat-label>TVA</mat-label>
+        <input matInput placeholder="TVA" formControlName="vat">
+        <mat-icon matSuffix>settings</mat-icon>
+        <mat-hint *ngIf="vat?.hasError('required')" class="alert"> Inscrire la TVA</mat-hint>
+    </mat-form-field>
+    <mat-form-field class=tech-care-field>
+        <mat-label>Date du prix constaté</mat-label>
+        <input matInput [matDatepicker]="datepicker" formControlName="date_price"/>
+        <mat-hint *ngIf="datePrice?.hasError('required')" class="alert"> Choisir la date du prix constaté</mat-hint>
+        <mat-datepicker-toggle class="datepicker" matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+          <mat-datepicker-actions>
+            <app-tech-care-buttons [buttonClass]="'nok-button'" [name]="'Annuler'" mat-button matDatepickerCancel></app-tech-care-buttons>
+            <app-tech-care-buttons [buttonClass]="'supplier-button'" [name]="'Appliquer'" mat-raised-button matDatepickerApply>Appliquer</app-tech-care-buttons>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class=tech-care-field>
+        <mat-label>Unités</mat-label>
+        <input matInput placeholder="TVA" formControlName="units">
+        <mat-icon matSuffix>settings</mat-icon>
+        <mat-hint *ngIf="units?.hasError('required')" class="alert"> Inscrire le nombre d'unités</mat-hint>
+    </mat-form-field>
+    <mat-form-field class=tech-care-field>
+        <mat-label>Commentaires</mat-label>
+        <input matInput placeholder="TVA" formControlName="comments">
+        <mat-icon matSuffix>settings</mat-icon>
+        <mat-hint *ngIf="comments?.hasError('required')" class="alert"> Inscrire vos remarques ici</mat-hint>
+    </mat-form-field>
+    <mat-form-field class=tech-care-field>
+        <mat-label>Famille de produit</mat-label>
+        <mat-select placeholder="Famille de produit" formControlName="family_product">
+            <mat-option>test</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>settings</mat-icon>
+        <mat-hint *ngIf="familyProduct?.hasError('required')" class="alert"> Choisir une famille de produit</mat-hint>
+    </mat-form-field>
+    <app-tech-care-buttons [type]="'form'" [icon]="'save'" [name]="'Ajouter produit'" [buttonClass]="'supplier-button'" [disabled]="!productForm.valid"></app-tech-care-buttons>
+</form>

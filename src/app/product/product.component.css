@@ -1,4 +1,13 @@
-.supplier {
+.tech-care-field-text {
+    color: #6740bf !important;
+    color: rgba(255, 0, 0, 0.527) !important;
+}
+
+.datepicker {
+    color: #6740bf !important;
+}
+
+.product {
     display: flex;
     margin-top: 5vh;
     flex-direction: column;
@@ -7,8 +16,8 @@
 }
 
 .tech-care-field {
-    width: 50vh;
     color: #6740bf !important;
+    width: 50vh;
     margin-bottom: 5vh;
 }
 

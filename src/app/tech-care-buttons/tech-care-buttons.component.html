@@ -1,4 +1,6 @@
 <a *ngIf="type === 'basic'" mat-button [routerLink]=path routerLinkActive=active ariaCurrentWhenActive=page [ngClass]=buttonClass><mat-icon *ngIf=icon>{{ icon }}</mat-icon>{{ name }}</a>
 <!--mat fab button-->
 <a *ngIf="type === 'fab'" mat-fab extended [routerLink]=path routerLinkActive=active ariaCurrentWhenActive=page [ngClass]=buttonClass><mat-icon *ngIf=icon>{{ icon }}</mat-icon>{{ name }}</a>
+<!--form button-->
+<button *ngIf="type === 'form'" type="submit" mat-button extended [routerLink]=path routerLinkActive=active ariaCurrentWhenActive=page [ngClass]=buttonClass [disabled]="disabled"><mat-icon *ngIf=icon>{{ icon }}</mat-icon>{{ name }}</button>
 

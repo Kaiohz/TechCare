@@ -4,72 +4,71 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { TechCareButtonsComponent } from '../tech-care-buttons/tech-care-buttons.component';
-import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {Validators} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import ApiService from '../services/api/api.service'
-import { Supplier } from '../dto/supplier';
 import {
   MatSnackBar,
 } from '@angular/material/snack-bar';
+import { FamilyProduct } from '../dto/familyproduct';
 
 
 @Component({
-  selector: 'app-supplier',
+  selector: 'app-familyproduct',
   standalone: true,
   imports: [MatFormFieldModule, MatSelectModule, MatInputModule, MatIconModule, TechCareButtonsComponent, ReactiveFormsModule,CommonModule],
-  templateUrl: './supplier.component.html',
-  styleUrl: './supplier.component.css',
+  templateUrl: './familyproduct.component.html',
+  styleUrl: './familyproduct.component.css',
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SupplierComponent {
+
+export class FamilyProductComponent {
   private _snackBar = inject(MatSnackBar);
   
   apiService = new ApiService();
 
-  supplierForm = new FormGroup({
-    companyName: new FormControl('',Validators.required),
-    siret: new FormControl('', [Validators.required, Validators.pattern(/^\d{14}$/)]),
-    adress: new FormControl('', Validators.required),
-    contact: new FormControl('', Validators.required),
+  familyProductForm = new FormGroup({
+    familyName: new FormControl('',Validators.required),
+    specifications: new FormArray([])
   });
 
-  get companyName() {
-    return this.supplierForm.get('companyName');
+  get familyName() {
+    return this.familyProductForm.get('familyName');
   }
 
-  get siret() {
-    return this.supplierForm.get('siret');
+  get specificationsFormArray(): FormArray {
+    return this.familyProductForm.get('specifications') as FormArray;
   }
 
-  get adress() {
-    return this.supplierForm.get('adress');
+  addSpecification() {
+    const newControl = new FormControl('', Validators.required);
+    this.specificationsFormArray.push(newControl);
   }
 
-  get contact() {
-    return this.supplierForm.get('contact');
+  removeSpecification(index: number) {
+    this.specificationsFormArray.removeAt(index);
   }
 
   async onSubmit() {
-    const supplier: Supplier = new Supplier();
-    supplier.company_name = String(this.companyName?.value)
-    supplier.siret = String(this.siret?.value)
-    supplier.adress = String(this.adress?.value)
-    supplier.contact  =String(this.contact?.value)
+    const familyProduct: FamilyProduct = new FamilyProduct();
+    familyProduct.family_name = String(this.familyName?.value)
+    familyProduct.specifications = String(this.specificationsFormArray?.value)
     try {
-      await this.apiService.addSupplier(supplier)
-      this._snackBar.open('✔ Fournisseur '+supplier.company_name+' ajouté avec succès', '', {
+      await this.apiService.addFamilyProduct(familyProduct)
+      this._snackBar.open('✔ Famille de produit '+familyProduct.family_name+' ajoutée avec succès', '', {
         horizontalPosition: 'right',
         verticalPosition: 'bottom',
         panelClass: ['success-snack'],
         duration: 2500
       });
-      this.supplierForm.reset()
+      this.familyProductForm.reset()
+      this.specificationsFormArray.clear();
     } catch (error) {
-      this._snackBar.open('X Erreur lors de l\'ajout du fournisseur '+supplier.company_name, '', {
+      this._snackBar.open('X Erreur lors de l\'ajout de la famille de produit '+familyProduct.family_name, '', {
         horizontalPosition: 'right',
         verticalPosition: 'bottom',
         panelClass: ['error-snack'],

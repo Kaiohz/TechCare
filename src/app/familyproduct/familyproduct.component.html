@@ -1,0 +1,23 @@
+<form class='family-product' [formGroup]='familyProductForm' (ngSubmit)="onSubmit()">
+    <div>
+        <mat-form-field class=tech-care-field>
+            <mat-label>Famille de produit</mat-label>
+            <input matInput placeholder='Famille de produit' formControlName="familyName">
+            <mat-icon matSuffix>category</mat-icon>
+            <mat-hint *ngIf="familyName?.hasError('required')" class="alert"> Inscrire le nom de la famille de produit</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="dynamic-fields" formArrayName="specifications" *ngFor="let control of specificationsFormArray.controls; let i = index">
+        <mat-form-field class=tech-care-field>
+            <mat-label>Caractéristiques</mat-label>
+            <input matInput placeholder='Famille de produit' [formControlName]="i">
+            <mat-icon matSuffix>settings</mat-icon>
+            <mat-hint *ngIf="specificationsFormArray.at(i)?.hasError('required')" class="alert"> Inscrire les caractéristiques spécifiques à la famille de produit</mat-hint>
+        </mat-form-field>
+        <app-tech-care-buttons [buttonClass]="'remove-field'" [icon]="'delete'" [name]="' Supprimer '" (click)="removeSpecification(i)"></app-tech-care-buttons>
+    </div>
+    <div class="separator">
+        <app-tech-care-buttons [name]="'+ Ajouter une caractéristique'" [buttonClass]="'supplier-button'" (click)="addSpecification()"></app-tech-care-buttons>
+    </div>
+    <app-tech-care-buttons [type]="'form'" [icon]="'save'" [name]="'Ajouter famille de produit'" [buttonClass]="'supplier-button'" [disabled]="!familyProductForm.valid"></app-tech-care-buttons>
+</form>

@@ -18,5 +18,5 @@ export class TechCareButtonsComponent {
   @Input() buttonClass: string = 'default';
   @Input() icon?: string;
   @Input() type: string = 'basic';
-
+  @Input() disabled?: boolean;
 }

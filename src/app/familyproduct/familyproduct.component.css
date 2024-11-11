@@ -1,4 +1,11 @@
-.supplier {
+.tech-care-field {
+    color: #6740bf !important;
+    width: 50vh;
+    margin-bottom: 5vh;
+    margin-right: 1vh;
+}
+
+.family-product {
     display: flex;
     margin-top: 5vh;
     flex-direction: column;
@@ -6,9 +13,11 @@
     justify-content: center;
 }
 
-.tech-care-field {
-    width: 50vh;
-    color: #6740bf !important;
+.dynamic-fields {
+    margin-left: 15vh;
+}
+
+.separator {
     margin-bottom: 5vh;
 }
 

@@ -2,15 +2,30 @@
 .sidebar {
     color: black !important;
     margin-top: 1vh;
+    width: 100%;
+    justify-content: left;
 }
 
 .sidebar:hover {
-    background-color: darkgray;
+    background-color: rgb(255, 241, 255);
+    color: #6740bf !important;
 }
 
 /* supplier button */
 
-.supplier {
-    color: black !important;
-    margin-top: 5vh;
+.supplier-button {
+    background-color: #179351;
+    color: white;
+}
+
+/* remove field */
+.remove-field {
+    background-color: rgba(255, 0, 0, 0.527);
+    width: 15vh !important;
+    color: white;
+}
+
+.nok-button {
+    background-color: rgba(255, 0, 0, 0.527);
+    color: white;
 }
