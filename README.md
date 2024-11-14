@@ -1,27 +1,26 @@
-# TechCareAngular
+# TechCare - Application de Gestion d'Inventaire Produits
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+TechCare est une application web développée avec Angular 17 permettant aux établissements gérer leur inventaire, leurs fournisseurs et leurs produits de manière efficace.
 
-## Development server
+## Fonctionnalités principales
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Gestion des fournisseurs**
+  - Création et suivi des fournisseurs
+  - Stockage des informations essentielles (SIRET, coordonnées, etc.)
 
-## Code scaffolding
+- **Gestion des produits**
+  - Organisation des produits par familles
+  - Création et listing des produits
+  - Gestion des images de produits
+  - Association produits-fournisseurs
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Interface utilisateur intuitive**
+  - Navigation simplifiée via sidebar
+  - Interface responsive
+  - Composants Material Design
 
-## Build
+## Prérequis techniques
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Node.js (version 18 ou supérieure)
+- npm (version 9 ou supérieure)
+- Angular CLI (version 17.3.0)
